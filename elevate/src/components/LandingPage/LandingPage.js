@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import './LandingPage.css';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import SignIn from './signIn'
 
 class LandingPage extends Component {
   // constructor(props){
@@ -18,7 +21,15 @@ class LandingPage extends Component {
 
   render() {
     return (
-      <div></div>
+      <div>
+        <Toolbar>
+          <Typography variant="h6" color="inherit" noWrap>
+            E L E V A T E
+          </Typography>
+        </Toolbar>
+        <SignIn/>
+      </div>
+      
     );
   }
 }

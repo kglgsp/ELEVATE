@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import './Registration.css';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import SignUp from './signUp.js'
 
 class Registration extends Component {
   // constructor(props){
@@ -18,7 +21,14 @@ class Registration extends Component {
 
   render() {
     return (
-      <div></div>
+      <div>
+        <Toolbar>
+          <Typography variant="h6" color="inherit" noWrap>
+          E L E V A T E
+          </Typography>
+        </Toolbar>
+        <SignUp/>
+      </div>
     );
   }
 }
