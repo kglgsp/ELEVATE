@@ -1,5 +1,5 @@
   
-import React from 'react';
+import React, {useState} from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -15,6 +15,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import handshake from '../../assets/img/handshake.jpg';
 
+import * as firebase from '../../utils/firebase'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -50,6 +51,9 @@ const useStyles = makeStyles((theme) => ({
 export default function SignIn() {
   const classes = useStyles();
 
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+
   return (
     <Grid container component="main" className={classes.root}>
       <CssBaseline />
@@ -72,6 +76,7 @@ export default function SignIn() {
               label="Email Address"
               name="email"
               autoComplete="email"
+              onChange = {(event) => setEmail(event.target.value)}
               autoFocus
             />
             <TextField
@@ -84,17 +89,21 @@ export default function SignIn() {
               type="password"
               id="password"
               autoComplete="current-password"
+              onChange = {(event) => setPassword(event.target.value)}
             />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
             />
             <Button
-              type="submit"
+              //type="submit"
               fullWidth
               variant="contained"
               color="primary"
               className={classes.submit}
+              onClick = {() => {if(firebase.authenticateUser(email,password)){
+                window.location.href = "/home"
+              }}}
             >
               Sign In
             </Button>

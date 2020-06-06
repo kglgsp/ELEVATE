@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -13,6 +13,8 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
+//firebase functions
+import * as firebase from '../../utils/firebase'
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -37,6 +39,11 @@ const useStyles = makeStyles((theme) => ({
 export default function SignUp() {
   const classes = useStyles();
 
+  const [firstName, setFirst] = useState('')
+  const [lastName, setLast] = useState('')
+  const [email, setEmail] = useState('') // '' is the initial value
+  const [password, setPassword] = useState('') 
+  
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -59,6 +66,7 @@ export default function SignUp() {
                 id="firstName"
                 label="First Name"
                 autoFocus
+                onChange = {(event) => setFirst(event.target.value)}
               />
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -70,6 +78,7 @@ export default function SignUp() {
                 label="Last Name"
                 name="lastName"
                 autoComplete="lname"
+                onChange = {(event) => setLast(event.target.value)}
               />
             </Grid>
             <Grid item xs={12}>
@@ -81,6 +90,7 @@ export default function SignUp() {
                 label="Email Address"
                 name="email"
                 autoComplete="email"
+                onChange = {(event) => setEmail(event.target.value)}
               />
             </Grid>
             <Grid item xs={12}>
@@ -93,16 +103,20 @@ export default function SignUp() {
                 type="password"
                 id="password"
                 autoComplete="current-password"
+                onChange = {(event) => setPassword(event.target.value)}
               />
             </Grid>
 
           </Grid>
           <Button
-            type="submit"
             fullWidth
             variant="contained"
             color="primary"
             className={classes.submit}
+            onClick = {async() => {
+              if(await firebase.createUser(email, password, {email, password, firstName, lastName})){
+                window.location.href = "/home"
+              }}}
           >
             Sign Up
           </Button>
