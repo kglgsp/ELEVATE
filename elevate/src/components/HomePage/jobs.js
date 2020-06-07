@@ -1,7 +1,6 @@
 import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
-import CameraIcon from '@material-ui/icons/PhotoCamera';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
@@ -12,7 +11,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   icon: {
@@ -74,7 +73,7 @@ export default function JobsCard() {
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
                 <Grid item>
-                  <Button variant="contained" color="primary">
+                  <Button component={ Link } to="/add-job" variant="contained" color="primary">
                     Add Job
                   </Button>
                 </Grid>
@@ -85,7 +84,7 @@ export default function JobsCard() {
                 </Grid>
                 <Grid item>
                   <Button variant="outlined" color="primary">
-                    Return to Main
+                    Logout
                   </Button>
                 </Grid>
               </Grid>
