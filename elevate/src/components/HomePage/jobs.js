@@ -12,6 +12,12 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { Link } from 'react-router-dom';
+import movers from '../../assets/img/movers.jpg';
+import tutor from '../../assets/img/tutor.jpg';
+import pizza from '../../assets/img/pizza.jpg';
+import mower from '../../assets/img/mower.jpg';
+
+
 
 const useStyles = makeStyles((theme) => ({
   icon: {
@@ -45,7 +51,36 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const cards = [1, 2, 3, 4, 5, 6, 7, 8];
+const cards = [
+{
+  "id": 1,
+  "img": tutor,
+  "jobTitle": "Math Tutor" ,
+  "jobPay": "15", 
+  "jobDesc": "Assist student with homework, teaching them how to perform the calculations needed to complete their assignments."
+}, 
+{
+  "id": 2,
+  "img": mower,
+  "jobTitle": "Gardner Project" ,
+  "jobPay": "23", 
+  "jobDesc": "Mow, trim, and fertilize green spaces. Maintain all gardening equipment and machinery, like mowers, trimmers and leaf blowers."
+}, 
+{
+  "id": 3,
+  "img": pizza,
+  "jobTitle": "Pizza Delivery Driver" ,
+  "jobPay": "21", 
+  "jobDesc": "Require: Drivers License. Seeking someone to transport pizza from our restaurant to our customers. In this position, you will be required to confirm that orders have been correctly fulfilled before delivering the product to customers. "
+}, 
+{
+  "id": 4,
+  "img": movers,
+  "jobTitle": "Movers" ,
+  "jobPay": "30", 
+  "jobDesc": "Looking for a physically fit, responsible individual to move furniture by loading items into and out of moving trucks. Movers are responsible for ensuring that items are undamaged and placed in the correct position in the new location."
+}
+];
 
 export default function JobsCard() {
   const classes = useStyles();
@@ -99,15 +134,15 @@ export default function JobsCard() {
                 <Card className={classes.card}>
                   <CardMedia
                     className={classes.cardMedia}
-                    image="https://source.unsplash.com/random"
+                    image={card.img}
                     title="Image title"
                   />
                   <CardContent className={classes.cardContent}>
                     <Typography gutterBottom variant="h5" component="h2">
-                      Math Tutor | $14/hr
+                      {card.jobTitle} | ${card.jobPay}/hr
                     </Typography>
                     <Typography>
-                      Here lies the job description
+                      {card.jobDesc}
                     </Typography>
                   </CardContent>
                   <CardActions>

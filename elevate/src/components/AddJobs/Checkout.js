@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import AppBar from '@material-ui/core/AppBar';
@@ -70,6 +70,18 @@ function getStepContent(step) {
 export default function Checkout() {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
+  // const [firstName, setFirst] = useState('')
+  // const [lastName, setLast] = useState('')
+  // const [add1, setAdd1] = useState('')
+  // const [add2, setAdd2] = useState('')
+  // const [city, setCity] = useState('')
+  // const [zip, setZip] = useState('')
+  // const [country, setCountry] = useState('')
+  // const [jobTitle, setJobTitle] = useState('')
+  // const [hourlyRate, setHourlyRate] = useState('')
+  // const [jobDesc, setJobDesc] = useState('')
+  // const [jobAdd, setJobAdd] = useState('')
+
 
   const handleNext = () => {
     setActiveStep(activeStep + 1);
@@ -78,6 +90,8 @@ export default function Checkout() {
   const handleBack = () => {
     setActiveStep(activeStep - 1);
   };
+
+
 
   return (
     <React.Fragment>
@@ -109,7 +123,7 @@ export default function Checkout() {
                 </Typography>
                 <Typography variant="subtitle1">
                   Your submission number is #2001539. We have emailed your confirmation, and will
-                  send you an update when it's been approved.
+                  send you an update when it's been approved. Please wait at least 24 hours to process.
                 </Typography>
               </React.Fragment>
             ) : (

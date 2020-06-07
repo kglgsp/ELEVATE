@@ -42,8 +42,8 @@ export default function PaymentForm() {
         <Grid item xs={12}>
           <TextField
             required
-            id="jobAddress"
-            name="jobAddress"
+            id="jobAdd"
+            name="jobAdd"
             label="Job address"
             fullWidth
           />

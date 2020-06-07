@@ -50,6 +50,7 @@ export const getData = (url) => {
     })
 }
 
+
 export const postData = (url, data) => {
 
     return firebase.database().ref(url).update(data)
