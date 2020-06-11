@@ -35,7 +35,7 @@ class HomePage extends Component {
 
     return (
       <div>
-            //console.log('I was triggered during render')
+            {/* //console.log('I was triggered during render') */}
     
         <JobsCard/>
       
