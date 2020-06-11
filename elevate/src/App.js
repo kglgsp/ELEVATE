@@ -8,6 +8,7 @@ import HomePage from './components/HomePage'
 import Registration from './components/Registration'
 import AddJobs from './components/AddJobs'
 import * as firebase from './utils/firebase'
+import { Search } from './components/Search/Search';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <Route exact path = "/home" component = {HomePage} />
         <Route exact path = "/registration" component = {Registration} />
         <Route exact path = "/add-job" component = {AddJobs} />
+        <Route exact path = "/search" component = {Search}/>
       </div>
     </Router>
   );
