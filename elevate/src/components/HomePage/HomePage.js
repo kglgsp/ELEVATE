@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './HomePage.css';
 import JobsCard from './jobs.js'
+import { SearchBar } from '../SearchBar/SearchBar';
 
 class HomePage extends Component {
   constructor(props){
@@ -34,9 +35,15 @@ class HomePage extends Component {
 
     return (
       <div>
+            //console.log('I was triggered during render')
+    
         <JobsCard/>
+      
+      
+        
       </div>
     );
+    
   }
 }
 

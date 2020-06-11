@@ -16,6 +16,7 @@ import movers from '../../assets/img/movers.jpg';
 import tutor from '../../assets/img/tutor.jpg';
 import pizza from '../../assets/img/pizza.jpg';
 import mower from '../../assets/img/mower.jpg';
+import { SearchBar } from '../SearchBar/SearchBar';
 
 
 
@@ -105,8 +106,17 @@ export default function JobsCard() {
             <Typography variant="h5" align="center" color="textSecondary" paragraph>
               Explore work opportunities that accomodates your schedule and fits your interests. 
             </Typography>
+
+
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
+                <Grid item>
+                  <p>
+                    
+                     <SearchBar/>
+                   
+                  </p>
+                </Grid>
                 <Grid item>
                   <Button component={ Link } to="/add-job" variant="contained" color="primary">
                     Add Job
