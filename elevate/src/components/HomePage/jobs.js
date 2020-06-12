@@ -16,6 +16,7 @@ import movers from '../../assets/img/movers.jpg';
 import tutor from '../../assets/img/tutor.jpg';
 import pizza from '../../assets/img/pizza.jpg';
 import mower from '../../assets/img/mower.jpg';
+import LocationOnIcon from '@material-ui/icons/LocationOn';
 import { SearchBar } from '../SearchBar/SearchBar';
 
 
@@ -58,30 +59,41 @@ const cards = [
   "img": tutor,
   "jobTitle": "Math Tutor" ,
   "jobPay": "15", 
-  "jobDesc": "Assist student with homework, teaching them how to perform the calculations needed to complete their assignments."
+  "jobDesc": "Assist student with homework, teaching them how to perform the calculations needed to complete their assignments.",
+  "location": "New York, CA 34234"
 }, 
 {
   "id": 2,
   "img": mower,
-  "jobTitle": "Gardner Project" ,
+  "jobTitle": "Gardening Project" ,
   "jobPay": "23", 
-  "jobDesc": "Mow, trim, and fertilize green spaces. Maintain all gardening equipment and machinery, like mowers, trimmers and leaf blowers."
+  "jobDesc": "Mow, trim, and fertilize green spaces. Maintain all gardening equipment and machinery, like mowers, trimmers and leaf blowers.",
+  "location": "San Diego, CA 95663"
 }, 
 {
   "id": 3,
   "img": pizza,
   "jobTitle": "Pizza Delivery Driver" ,
   "jobPay": "21", 
-  "jobDesc": "Require: Drivers License. Seeking someone to transport pizza from our restaurant to our customers. In this position, you will be required to confirm that orders have been correctly fulfilled before delivering the product to customers. "
+  "jobDesc": "Require: Drivers License. Seeking someone to transport pizza from our restaurant to our customers. In this position, you will be required to confirm that orders have been correctly fulfilled before delivering the product to customers. ",
+  "location": "Los Angeles, 23156"
 }, 
 {
   "id": 4,
   "img": movers,
   "jobTitle": "Movers" ,
   "jobPay": "30", 
-  "jobDesc": "Looking for a physically fit, responsible individual to move furniture by loading items into and out of moving trucks. Movers are responsible for ensuring that items are undamaged and placed in the correct position in the new location."
+  "jobDesc": "Looking for a physically fit, responsible individual to move furniture by loading items into and out of moving trucks. Movers are responsible for ensuring that items are undamaged and placed in the correct position in the new location.",
+  "location": "San Francisco, 95654"
 }
 ];
+
+
+
+
+
+
+
 
 export default function JobsCard() {
   const classes = useStyles();
@@ -89,6 +101,7 @@ export default function JobsCard() {
   return (
     <React.Fragment>
       <CssBaseline />
+
       <AppBar position="relative">
         <Toolbar>
           <Typography variant="h6" color="inherit" noWrap>
@@ -96,6 +109,8 @@ export default function JobsCard() {
           </Typography>
         </Toolbar>
       </AppBar>
+
+
       <main>
         {/* Hero unit */}
         <div className={classes.heroContent}>
@@ -136,6 +151,11 @@ export default function JobsCard() {
             </div>
           </Container>
         </div>
+
+        <Typography component="h1" variant="h4" align="center" color="textPrimary" gutterBottom>
+                Featured Listings
+            </Typography>
+        
         <Container className={classes.cardGrid} maxWidth="md">
           {/* End hero unit */}
           <Grid container spacing={4}>
@@ -154,6 +174,12 @@ export default function JobsCard() {
                     <Typography>
                       {card.jobDesc}
                     </Typography>
+
+                    <Typography>
+                      <LocationOnIcon color="primary" />
+                        {card.location}
+                      </Typography>
+
                   </CardContent>
                   <CardActions>
                     <Button size="small" color="primary">

@@ -5,11 +5,29 @@ import "firebase/database";
 
 const credentials = require('./credentials.json')
 
+//init firebase and firestore
 export const setup = () => {
     firebase.initializeApp(credentials)
 
     //return instances if needed
     console.log("firebase initialized")
+
+    // var firestore = firebase.firestore();
+    // const submitBtn = document.querySelector('#Submit');
+    // let userName=document.querySelector('#userFullName');
+
+    // const db = firestore.collection("jobsData");
+    // submitBtn.addEventListener('click', function(){
+    //         let userNameInput = userName.value;
+
+
+    //         db.doc().set({
+    //             name: userNameInput;
+
+    //         })
+    // })
+
+
 }
 
 export const authenticateUser = (email, password) => {
