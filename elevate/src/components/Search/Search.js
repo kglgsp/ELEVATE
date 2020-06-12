@@ -92,7 +92,7 @@ const cards = [
       "img": dataentryPerson1,
       "jobTitle": "Data Entry" ,
       "jobPay": "15", 
-      "jobDesc": "Assist student with homework, teaching them how to perform the calculations needed to complete their assignments.",
+      "jobDesc": "Looking for someone to type up my history recorderd lectures.",
       "location": "Riverside, CA 92507"
     }, 
     {
